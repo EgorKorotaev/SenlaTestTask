@@ -1,4 +1,4 @@
-package Solution.Test1;
+package solution.test1;
 
 public class Check_int {
     /**

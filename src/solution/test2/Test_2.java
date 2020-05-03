@@ -1,4 +1,4 @@
-package Solution.Test2;
+package solution.test2;
 
 public class Test_2 {
     public static int NOD(int a, int b) {
