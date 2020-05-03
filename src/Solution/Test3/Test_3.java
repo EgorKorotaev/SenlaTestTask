@@ -1,4 +1,4 @@
-package Solution.Test_3;
+package Solution.Test3;
 
 public class Test_3 {
 }

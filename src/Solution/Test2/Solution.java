@@ -1,4 +1,4 @@
-package Solution.Test_2;
+package Solution.Test2;
 
 import java.util.Arrays;
 import java.util.Scanner;
