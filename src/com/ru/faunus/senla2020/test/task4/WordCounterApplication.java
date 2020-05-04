@@ -1,7 +1,5 @@
 package com.ru.faunus.senla2020.test.task4;
 
-import com.ru.faunus.senla2020.test.task1.NumberInfo;
-
 import java.util.Scanner;
 
 public class WordCounterApplication {
