@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println(CheckAndCall(scanner.nextInt()));
+            System.out.println(checkingForParityAndSimplicity(scanner.nextInt()));
         }
     }
 
     public static String main(int args) {
-        return CheckAndCall(args);
+        return checkingForParityAndSimplicity(args);
     }
 
-    private static String CheckAndCall(int args) {
+    private static String checkingForParityAndSimplicity(int args) {
         String res = "Число " + args + " ";
         if (args % 2 == 0) {
             res = res.concat("чётное ");
