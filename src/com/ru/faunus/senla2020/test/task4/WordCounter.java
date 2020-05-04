@@ -2,31 +2,25 @@ package com.ru.faunus.senla2020.test.task4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class WordCounter {
-    public static void main(String[] args) {
-        CheckAndCall();
+    public String line;
+    public String word;
+    public int wordCounter;
+
+    public WordCounter(String line, String word) {
+        this.line = line;
+        this.word = word;
+        wordCounter();
     }
 
-    private static void CheckAndCall() {
-        System.out.print("Задание 4: введите предложение ");
-        Scanner scanner = new Scanner(System.in);
-        try {
-            String[] line = scanner.nextLine().split(" ");
-            ArrayList<String> words = new ArrayList<>(Arrays.asList(line));
-            System.out.print("Введите искомое слово: ");
-            Scanner scan = new Scanner(System.in);
-            String reference = scan.nextLine();
-            int counter = 0;
-            for (String word : words) {
-                if (reference.toUpperCase().hashCode() == word.toUpperCase().hashCode()) {
-                    counter++;
-                }
+    private void wordCounter() {
+        String[] line = this.line.split(" ");
+        ArrayList<String> words = new ArrayList<>(Arrays.asList(line));
+        for (int i = 0; i < words.size(); i++) {
+            if (this.word.toUpperCase().equals(word.toUpperCase())) {
+                wordCounter++;
             }
-            System.out.println("Слово уптреблялось: " + counter);
-        } catch (NumberFormatException e) {
-            System.out.println("Ошбика ввода: неверный формат чисел");
         }
     }
 }

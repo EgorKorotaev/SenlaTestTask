@@ -6,26 +6,25 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class LineInfo {
-    public static void main(String[] args) {
-        CheckAndCall();
+    public String words;
+    public int count;
+
+    public LineInfo(String line) {
+        this.words = line;
     }
 
-    private static void CheckAndCall() {
-        System.out.print("Задание 3: введите предложение ");
-        try (Scanner scanner = new Scanner(System.in)) {
-            String[] line = scanner.nextLine().split(" ");
-            ArrayList<String> words = new ArrayList<>(Arrays.asList(line));
-            for (int i = 0; i < words.size(); i++) {
-                words.set(i, words.get(i).substring(0, 1).toUpperCase() + words.get(i).substring(1));
-            }
-            Collections.sort(words);
-            StringBuilder output = new StringBuilder();
-            for (String word : words) {
-                output.append(word).append(" ");
-            }
-            System.out.println("количество слов: " + words.size() + "\n" + output);
-        } catch (NumberFormatException e) {
-            System.out.println("Ошбика ввода: неверный формат");
+    public void workToLine() {
+        String[] line = words.split(" ");
+        ArrayList<String> words = new ArrayList<>(Arrays.asList(line));
+        for (int i = 0; i < words.size(); i++) {
+            words.set(i, words.get(i).substring(0, 1).toUpperCase() + words.get(i).substring(1));
         }
+        Collections.sort(words);
+        StringBuilder output = new StringBuilder();
+        for (String word : words) {
+            output.append(word).append(" ");
+        }
+        this.words = output.toString();
+        this.count = words.size();
     }
 }
