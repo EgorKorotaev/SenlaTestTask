@@ -12,18 +12,21 @@ public class Test_3 {
 
     private static void CheckAndCall() {
         System.out.print("Задание 3: введите предложение ");
-        Scanner scanner = new Scanner(System.in); try {
+        Scanner scanner = new Scanner(System.in);
+        try {
             String[] line = scanner.nextLine().split(" ");
             ArrayList<String> words = new ArrayList<>(Arrays.asList(line));
-            for(int i = 0; i < words.size(); i++ ){
+            for (int i = 0; i < words.size(); i++) {
                 words.set(i, words.get(i).substring(0, 1).toUpperCase() + words.get(i).substring(1));
             }
             Collections.sort(words);
-            System.out.println(words.toString());
-            System.out.println(words.size());
+            StringBuilder output = new StringBuilder();
+            for (String word : words) {
+                output.append(word).append(" ");
+            }
+            System.out.println("количество слов: " + words.size() + "\n" + output);
         } catch (NumberFormatException e) {
             System.out.println("Ошбика ввода: неверный формат чисел");
         }
-
     }
 }
