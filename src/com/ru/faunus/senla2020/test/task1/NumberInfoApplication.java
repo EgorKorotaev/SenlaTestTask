@@ -8,7 +8,7 @@ public class NumberInfoApplication {
         try (Scanner scanner = new Scanner(System.in)) {
             if (scanner.hasNextInt()) {
                 NumberInfo number = new NumberInfo(scanner.nextInt());
-                String output = "Число " + number.setnumber() + " ";
+                String output = "Число " + number.getNumber() + " ";
                 if (number.isEven()) {
                     output = output.concat("чётное ");
                 } else {

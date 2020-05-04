@@ -7,7 +7,7 @@ public class NumberInfo {
         this.number = number;
     }
 
-    public int setnumber(){
+    public int getNumber(){
         return number;
     }
 
