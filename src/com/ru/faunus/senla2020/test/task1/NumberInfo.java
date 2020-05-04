@@ -7,6 +7,10 @@ public class NumberInfo {
         this.number = number;
     }
 
+    public int setnumber(){
+        return number;
+    }
+
     public boolean isEven(){
         return number % 2 == 0;
     }
