@@ -8,16 +8,17 @@ public class NumberInfoApplication {
         try (Scanner scanner = new Scanner(System.in)) {
             if (scanner.hasNextInt()) {
                 NumberInfo number = new NumberInfo(scanner.nextInt());
-                String output = "Число " + number.getNumber() + " ";
+                StringBuilder output = new StringBuilder();
+                output.append("Число ").append(number.getNumber()).append(" ");
                 if (number.isEven()) {
-                    output = output.concat("чётное ");
+                    output.append("чётное ");
                 } else {
-                    output = output.concat("не чётное ");
+                    output.append("не чётное ");
                 }
                 if (number.isPrime()) {
-                    output = output.concat("и составное число");
+                    output.append("и составное число");
                 } else {
-                    output = output.concat("и простое число");
+                    output.append("и простое число");
                 }
                 System.out.println(output);
             } else {
