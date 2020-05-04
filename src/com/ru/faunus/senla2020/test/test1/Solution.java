@@ -4,40 +4,36 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
-        CheckAndCall();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println(CheckAndCall(scanner.nextInt()));
+        }
     }
 
-    private static void CheckAndCall() {
-        System.out.print("Задание 1: введите целое число ");
-        Scanner scanner = new Scanner(System.in); try {
-//        try (Scanner scanner = new Scanner(System.in)) {
-            if (scanner.hasNextInt()) {
-                int n = scanner.nextInt();
+    public static String main(int args) {
+        return CheckAndCall(args);
+    }
 
-                String res = "Число " + n + " ";
-                if (n % 2 == 0) {
-                    res = res.concat("чётное ");
-                } else {
-                    res = res.concat("не чётное ");
-                }
+    private static String CheckAndCall(int args) {
+        String res = "Число " + args + " ";
+        if (args % 2 == 0) {
+            res = res.concat("чётное ");
+        } else {
+            res = res.concat("не чётное ");
+        }
 
-                boolean j = true;
-                for (int i = 2; i * i <= n & j; i++) {
-                    if (n % i == 0) {
-                        j = false;
-                    }
-                }
-                if (!j) {
-                    res = res.concat("и составное число");
-                } else {
-                    res = res.concat("и простое число");
-                }
-
-                System.out.println(res);
-            } else {
-                scanner.close();
-                System.out.println("Ошбика ввода: введено не целое число");
+        boolean j = false;
+        for (int i = 2; i * i <= args; i++) {
+            if (args % i == 0) {
+                j = true;
+                break;
             }
-        } catch (Exception e){}
+        }
+        if (j) {
+            res = res.concat("и составное число");
+        } else {
+            res = res.concat("и простое число");
+        }
+
+        return res;
     }
 }
