@@ -1,4 +1,4 @@
-package com.ru.faunus.senla2020.test.test2;
+package com.ru.faunus.senla2020.test.task2;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -10,8 +10,7 @@ public class Solution {
 
     private static void CheckAndCall() {
         System.out.print("Задание 2: введите два целых числа ");
-        Scanner scanner = new Scanner(System.in); try {
-//        try (Scanner scanner = new Scanner(System.in)) {
+        try (Scanner scanner = new Scanner(System.in)) {
             int[] arr = Arrays.stream(scanner.nextLine().trim().split(" ")).mapToInt(Integer::parseInt).toArray();
             System.out.print("НОД: " + GCD(arr[0], arr[1]) + "\nНОК: " + LCM(arr[0], arr[1]));
         } catch (NumberFormatException e) {

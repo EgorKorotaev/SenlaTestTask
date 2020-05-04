@@ -1,10 +1,10 @@
-package com.ru.faunus.senla2020.test.test4;
+package com.ru.faunus.senla2020.test.task4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Test4 {
+public class WordCounter {
     public static void main(String[] args) {
         CheckAndCall();
     }

@@ -1,19 +1,18 @@
-package com.ru.faunus.senla2020.test.test3;
+package com.ru.faunus.senla2020.test.task3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class Test3 {
+public class LineInfo {
     public static void main(String[] args) {
         CheckAndCall();
     }
 
     private static void CheckAndCall() {
         System.out.print("Задание 3: введите предложение ");
-        Scanner scanner = new Scanner(System.in);
-        try {
+        try (Scanner scanner = new Scanner(System.in)) {
             String[] line = scanner.nextLine().split(" ");
             ArrayList<String> words = new ArrayList<>(Arrays.asList(line));
             for (int i = 0; i < words.size(); i++) {
