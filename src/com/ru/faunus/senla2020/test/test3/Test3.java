@@ -26,7 +26,7 @@ public class Test3 {
             }
             System.out.println("количество слов: " + words.size() + "\n" + output);
         } catch (NumberFormatException e) {
-            System.out.println("Ошбика ввода: неверный формат чисел");
+            System.out.println("Ошбика ввода: неверный формат");
         }
     }
 }
