@@ -17,6 +17,8 @@ public class NumberPalindromeApplication {
             } else {
                 System.out.println("Ошбика ввода: введено не целое число");
             }
+        } catch (NumberFormatException e) {
+            System.out.println("Ошбика ввода: неверный формат чисел");
         }
     }
 }
