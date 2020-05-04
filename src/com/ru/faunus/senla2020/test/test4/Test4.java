@@ -2,7 +2,6 @@ package com.ru.faunus.senla2020.test.test4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Test4 {
@@ -20,9 +19,9 @@ public class Test4 {
             Scanner scan = new Scanner(System.in);
             String reference = scan.nextLine();
             int counter = 0;
-            for (int i = 0; i < words.size(); i++) {
-                if (reference.toUpperCase().hashCode() == words.get(i).toUpperCase().hashCode()) {
-                    counter ++;
+            for (String word : words) {
+                if (reference.toUpperCase().hashCode() == word.toUpperCase().hashCode()) {
+                    counter++;
                 }
             }
             System.out.println("Слово уптреблялось: " + counter);
