@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class Test_3 {
+public class Test3 {
     public static void main(String[] args) {
         CheckAndCall();
     }
