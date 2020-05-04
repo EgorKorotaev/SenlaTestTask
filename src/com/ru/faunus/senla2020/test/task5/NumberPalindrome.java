@@ -1,17 +1,11 @@
 package com.ru.faunus.senla2020.test.task5;
 
-import java.util.ArrayList;
-
 class NumberPalindrome {
 
     private final int andNumber;
 
     public NumberPalindrome(int number) {
         this.andNumber = number;
-    }
-
-    public int getAndNumber() {
-        return andNumber;
     }
 
     private boolean isPalindrome(int num) {
