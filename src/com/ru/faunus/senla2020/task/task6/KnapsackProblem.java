@@ -51,11 +51,7 @@ public class KnapsackProblem {
         }
     }
 
-    public String ans() {
-        StringBuilder output = new StringBuilder();
-        for (Item an : ans) {
-            output.append(an).append("\n");
-        }
-        return output.toString();
+    public List<Item> ans() {
+        return ans;
     }
 }

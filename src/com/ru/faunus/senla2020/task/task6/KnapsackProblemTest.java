@@ -16,6 +16,10 @@ public class KnapsackProblemTest {
         );
         KnapsackProblem test = new KnapsackProblem(13, items);
         test.findAns();
-        System.out.println(test.ans());
+        StringBuilder output = new StringBuilder();
+        for (Item an : test.ans()) {
+            output.append(an).append("\n");
+        }
+        System.out.println(output);
     }
 }
