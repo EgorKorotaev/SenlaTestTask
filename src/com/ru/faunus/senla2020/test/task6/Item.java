@@ -2,35 +2,33 @@ package com.ru.faunus.senla2020.test.task6;
 
 public class Item {
 
-    private int w;
-    private int p;
+    private int weight;
+    private int price;
 
     @Override
     public String toString() {
-        return "Object{" +
-                "weight = " + w +
-                ", price = " + p +
-                '}';
+        return "weight = " + weight +
+                ", price = " + price;
     }
 
     public Item(int weight, int price){
-        w = weight;
-        p = price;
+        this.weight = weight;
+        this.price = price;
     }
 
-    public void setW(int w) {
-        this.w = w;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
-    public int getW() {
-        return w;
+    public int getWeight() {
+        return weight;
     }
 
-    public int getP() {
-        return p;
+    public int getPrice() {
+        return price;
     }
 
-    public void setP(int p) {
-        this.p = p;
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

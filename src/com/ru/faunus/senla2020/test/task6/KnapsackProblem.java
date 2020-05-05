@@ -7,12 +7,12 @@ public class KnapsackProblem {
     private List<Item> items;
     private List<Item> ans;
     private List<List<Integer>> matrixA;
-    private int weightKnapsack;
+    private int maxWeight;
 
-    public KnapsackProblem(int weightKnapsack) {
+    public KnapsackProblem(int maxWeight) {
         items = new ArrayList<>();
         addObject(0, 0);
-        this.weightKnapsack = weightKnapsack;
+        this.maxWeight = maxWeight;
     }
 
     public void addObject(int weight, int price) {
@@ -28,13 +28,13 @@ public class KnapsackProblem {
             matrixA.add(new ArrayList<>());
             matrixA.get(i).add(0, 0);
         }
-        for (int i = 0; i < weightKnapsack; i++) {
+        for (int i = 0; i < maxWeight; i++) {
             matrixA.get(0).add(i, 0);
         }
         for (int k = 1; k < items.size(); k++) {
-            for (int s = 1; s <= weightKnapsack; s++) {
-                if (s >= items.get(k).getW()) {
-                    matrixA.get(k).add(s, Math.max(matrixA.get(k - 1).get(s), matrixA.get(k - 1).get(s - items.get(k).getW()) + items.get(k).getP()));
+            for (int s = 1; s <= maxWeight; s++) {
+                if (s >= items.get(k).getWeight()) {
+                    matrixA.get(k).add(s, Math.max(matrixA.get(k - 1).get(s), matrixA.get(k - 1).get(s - items.get(k).getWeight()) + items.get(k).getPrice()));
                 } else {
                     matrixA.get(k).add(s, matrixA.get(k - 1).get(s));
                 }
@@ -46,34 +46,34 @@ public class KnapsackProblem {
         matrixA = new ArrayList<>(items.size());
         generateMatrixA();
         ans = new ArrayList<>();
-        findAns(items.size() - 1, weightKnapsack);
+        findAns(items.size() - 1, maxWeight);
     }
 
     public void findAns(int k, int s) {
         if (matrixA.get(k).get(s) == 0) {
             System.out.println("отработал");
-            break;
+            return;
         } else if (matrixA.get(k - 1).get(s).equals(matrixA.get(k).get(s))) {
             findAns(k - 1, s);
         } else {
             ans.add(items.get(k));
-            findAns(k - 1, s - items.get(k).getW());
+            findAns(k - 1, s - items.get(k).getWeight());
         }
     }
 
     public String ans() {
         StringBuilder output = new StringBuilder();
-        for (int i = 0; i <= ans.size(); i++) {
-            output.append(ans.get(i));
+        for (int i = 0; i < ans.size(); i++) {
+            output.append(ans.get(i)).append("\n");
         }
         return output.toString();
     }
 
-    public void setWeightKnapsack(int weightKnapsack) {
-        this.weightKnapsack = weightKnapsack;
+    public void setMaxWeight(int maxWeight) {
+        this.maxWeight = maxWeight;
     }
 
-    public int getWeightKnapsack() {
-        return weightKnapsack;
+    public int getMaxWeight() {
+        return maxWeight;
     }
 }
