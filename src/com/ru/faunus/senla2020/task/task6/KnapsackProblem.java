@@ -9,14 +9,9 @@ public class KnapsackProblem {
     private List<List<Integer>> matrixA;
     private final int maxWeight;
 
-    public KnapsackProblem(int maxWeight) {
-        items = new ArrayList<>();
-        addObject(new Item(0, 0));
+    public KnapsackProblem(int maxWeight, List<Item> items) {
+        this.items = items;
         this.maxWeight = maxWeight;
-    }
-
-    public void addObject(Item item) {
-        items.add(item);
     }
 
     private void generateMatrixA() {
