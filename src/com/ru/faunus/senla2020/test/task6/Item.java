@@ -1,11 +1,19 @@
 package com.ru.faunus.senla2020.test.task6;
 
-public class Object {
+public class Item {
 
     private int w;
     private int p;
 
-    public Object(int weight, int price){
+    @Override
+    public String toString() {
+        return "Object{" +
+                "weight = " + w +
+                ", price = " + p +
+                '}';
+    }
+
+    public Item(int weight, int price){
         w = weight;
         p = price;
     }
