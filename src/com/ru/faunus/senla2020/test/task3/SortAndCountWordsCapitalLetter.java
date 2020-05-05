@@ -3,13 +3,12 @@ package com.ru.faunus.senla2020.test.task3;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Scanner;
 
-public class SortingWordsNumberOfWordsCapitalLetter {
-    public String words;
-    public int count;
+public class SortAndCountWordsCapitalLetter {
+    private String words;
+    private int count;
 
-    public SortingWordsNumberOfWordsCapitalLetter(String line) {
+    public SortAndCountWordsCapitalLetter(String line) {
         this.words = line;
     }
 
@@ -26,5 +25,13 @@ public class SortingWordsNumberOfWordsCapitalLetter {
         }
         this.words = output.toString();
         this.count = words.size();
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public String getWords() {
+        return words;
     }
 }
