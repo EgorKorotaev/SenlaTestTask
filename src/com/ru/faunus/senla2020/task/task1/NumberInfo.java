@@ -1,4 +1,4 @@
-package com.ru.faunus.senla2020.test.task1;
+package com.ru.faunus.senla2020.task.task1;
 
 public class NumberInfo {
     private final int number;

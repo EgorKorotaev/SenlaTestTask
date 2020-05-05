@@ -1,4 +1,4 @@
-package com.ru.faunus.senla2020.test.task5;
+package com.ru.faunus.senla2020.task.task5;
 
 import java.util.Scanner;
 

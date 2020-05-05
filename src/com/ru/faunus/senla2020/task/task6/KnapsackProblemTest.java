@@ -1,4 +1,4 @@
-package com.ru.faunus.senla2020.test.task6;
+package com.ru.faunus.senla2020.task.task6;
 
 public class KnapsackProblemTest {
     public static void main(String[] args) {

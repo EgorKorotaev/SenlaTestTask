@@ -1,4 +1,4 @@
-package com.ru.faunus.senla2020.test.task2;
+package com.ru.faunus.senla2020.task.task2;
 
 public class MathUtils {
 
