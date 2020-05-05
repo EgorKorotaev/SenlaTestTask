@@ -4,26 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KnapsackProblem {
-    private List<Item> items;
+    private final List<Item> items;
     private List<Item> ans;
     private List<List<Integer>> matrixA;
-    private int maxWeight;
+    private final int maxWeight;
 
     public KnapsackProblem(int maxWeight) {
         items = new ArrayList<>();
-        addObject(0, 0);
+        addObject(new Item(0, 0));
         this.maxWeight = maxWeight;
-    }
-
-    public void addObject(int weight, int price) {
-        items.add(new Item(weight, price));
     }
 
     public void addObject(Item item) {
         items.add(item);
     }
 
-    public void generateMatrixA() {
+    private void generateMatrixA() {
         for (int i = 0; i < items.size(); i++) {
             matrixA.add(new ArrayList<>());
             matrixA.get(i).add(0, 0);
@@ -49,31 +45,22 @@ public class KnapsackProblem {
         findAns(items.size() - 1, maxWeight);
     }
 
-    public void findAns(int k, int s) {
-        if (matrixA.get(k).get(s) == 0) {
-            System.out.println("отработал");
-            return;
-        } else if (matrixA.get(k - 1).get(s).equals(matrixA.get(k).get(s))) {
-            findAns(k - 1, s);
-        } else {
-            ans.add(items.get(k));
-            findAns(k - 1, s - items.get(k).getWeight());
+    private void findAns(int k, int s) {
+        if (matrixA.get(k).get(s) != 0) {
+            if (matrixA.get(k - 1).get(s).equals(matrixA.get(k).get(s))) {
+                findAns(k - 1, s);
+            } else {
+                ans.add(items.get(k));
+                findAns(k - 1, s - items.get(k).getWeight());
+            }
         }
     }
 
     public String ans() {
         StringBuilder output = new StringBuilder();
-        for (int i = 0; i < ans.size(); i++) {
-            output.append(ans.get(i)).append("\n");
+        for (Item an : ans) {
+            output.append(an).append("\n");
         }
         return output.toString();
-    }
-
-    public void setMaxWeight(int maxWeight) {
-        this.maxWeight = maxWeight;
-    }
-
-    public int getMaxWeight() {
-        return maxWeight;
     }
 }

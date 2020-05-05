@@ -11,7 +11,7 @@ public class NumberPalindromeApplication {
                 if (temp <= 100) {
                     StringBuilder output = new StringBuilder();
                     for (int i = 0; i <= temp; i++) {
-                        if (NumberPalindrome.checkingForPalindrome(i)) {
+                        if (NumberPalindrome.isPalindrome(i)) {
                             output.append(i).append(" ");
                         }
                     }
