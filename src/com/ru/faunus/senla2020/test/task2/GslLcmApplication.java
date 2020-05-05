@@ -8,8 +8,7 @@ public class GslLcmApplication {
         System.out.print("Задание 2: введите два целых числа ");
         try (Scanner scanner = new Scanner(System.in)) {
             int[] arr = Arrays.stream(scanner.nextLine().trim().split(" ")).mapToInt(Integer::parseInt).toArray();
-            GsdLcm gsdLcm = new GsdLcm(arr[0], arr[1]);
-            System.out.println("НОД: " + gsdLcm.gcd() + "\nНОК: " + gsdLcm.lcm());
+            System.out.println("НОД: " + MathUtils.gcd(arr[0], arr[1]) + "\nНОК: " + MathUtils.lcm(arr[0], arr[1]));
         } catch (NumberFormatException e) {
             System.out.println("Ошбика ввода: неверный формат чисел");
         }
