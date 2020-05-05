@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class LineInfo {
+public class SortingWordsNumberOfWordsCapitalLetter {
     public String words;
     public int count;
 
-    public LineInfo(String line) {
+    public SortingWordsNumberOfWordsCapitalLetter(String line) {
         this.words = line;
     }
 
