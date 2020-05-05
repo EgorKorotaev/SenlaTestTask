@@ -9,10 +9,10 @@ public class WordCounterApplication {
             String list = scanner.nextLine();
             System.out.print("Введите искомое слово: ");
             String word = scanner.nextLine();
-            WordCounter number = new WordCounter(list, word);
-            System.out.println("Слово уптреблялось: " + number.wordCounter);
+            WordCounter wordCounter = new WordCounter(list);
+            System.out.println("Слово уптреблялось: " + wordCounter.wordCounter(word));
         } catch (NumberFormatException e) {
-            System.out.println("Ошбика ввода: неверный формат чисел");
+            System.out.println("Ошбика ввода");
         }
     }
 }

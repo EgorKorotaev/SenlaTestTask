@@ -4,23 +4,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class WordCounter {
-    public String line;
-    public String word;
-    public int wordCounter;
+    private final String line;
 
-    public WordCounter(String line, String word) {
+    public WordCounter(String line) {
         this.line = line;
-        this.word = word;
-        wordCounter();
     }
 
-    private void wordCounter() {
+    public int wordCounter(String word) {
         String[] line = this.line.split(" ");
         ArrayList<String> words = new ArrayList<>(Arrays.asList(line));
-        for (int i = 0; i < words.size(); i++) {
-            if (this.word.toUpperCase().equals(word.toUpperCase())) {
+        int wordCounter = 0;
+        for (String s : words) {
+            if (s.toUpperCase().equals(word.toUpperCase())) {
                 wordCounter++;
             }
         }
+        return wordCounter;
     }
 }
