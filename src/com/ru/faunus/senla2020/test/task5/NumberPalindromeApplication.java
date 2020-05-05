@@ -9,8 +9,13 @@ public class NumberPalindromeApplication {
             if (scanner.hasNextInt()) {
                 int temp = scanner.nextInt();
                 if (temp <= 100) {
-                    NumberPalindrome number = new NumberPalindrome(temp);
-                    System.out.println(number.palindrome());
+                    StringBuilder output = new StringBuilder();
+                    for (int i = 0; i <= temp; i++) {
+                        if (NumberPalindrome.checkingForPalindrome(i)) {
+                            output.append(i).append(" ");
+                        }
+                    }
+                    System.out.println(output);
                 } else {
                     System.out.println("Ошбика ввода: введено число больше 100");
                 }
